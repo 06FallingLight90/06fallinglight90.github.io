@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表格修改</title>
+  <style>
+    table {
+      width: 50%;
+      border-collapse: collapse;
+      /*消除格间缝隙*/
+
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      text-align: center;
+      padding: 8px;
+    }
+
+    button {
+      margin-left: 5px;
+    }
+  </style>
+  <script src="./js/16.JS.js"></script>
+</head>
+
+<body>
+  <h1 style="text-align: center">表格修改</h1>
+  <button onclick="addRow()">增加数据</button>
+  <table id="table">
+    <tr>
+      <th>姓名</th>
+      <th>ID</th>
+      <th>操作</th>
+    </tr>
+    <tr>
+      <td>Kobe</td>
+      <td>24</td>
+      <td>
+        <button onclick="editRow(this)">编辑</button>
+        <button onclick="deleteRow(this)">删除</button>
+      </td>
+    </tr>
+  </table>
+
+
+</body>
+
+</html>
