@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'whiteRoad';
+  src: url('./fonts/whiteroad.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+4E00-9FFF;
+  /* 只包含中文，优化加载 */
+}
+
+@font-face {
+  font-family: 'dynalight';
+  src: url('./fonts/dynalight.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
