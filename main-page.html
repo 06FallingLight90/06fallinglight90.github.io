@@ -10,6 +10,8 @@
   <style>
     .topBar {
       text-align: center;
+      background: white;
+      border-radius: 10px;
     }
 
     #welcome-text {
@@ -32,21 +34,196 @@
       color: aquamarine;
       text-decoration: line-through solid gray 2px;
     }
+
+    body {
+      margin: 0;
+      /* 清除body默认边距 */
+      background: #f0f2f5;
+      /* 两边露出的背景色 */
+      /* 设置背景图片 */
+      background-image: url('./images/background-img.jpg');
+
+      /* 确保图片覆盖整个页面 */
+      background-size: cover;
+
+      /* 图片不重复 */
+      background-repeat: no-repeat;
+
+      /* 图片居中显示 */
+      background-position: center;
+
+      /* 固定背景，滚动时不动（视差效果） */
+      background-attachment: fixed;
+
+      padding: 0;
+    }
+
+    /*中间主内容列的css*/
+    .main-content {
+      max-width: 1200px;
+      /* 主体内容最大宽度 */
+      margin: 0 auto;
+      /* 水平居中，自动左右边距 */
+      background: rgba(255, 255, 255, 0.5);
+      /* 主体内容背景色与透明度 */
+      padding: 20px;
+      /* 内容内边距 */
+      min-height: 100vh;
+      /* 最小高度占满视口 */
+    }
+
+    /*右悬浮窗样式*/
+    .rightFloat {
+      width: 10rem;
+      height: 20rem;
+      position: fixed;
+      right: 0;
+      top: 16rem;
+    }
+
+    .rightFloat img {
+      width: 100%;
+      /* 让图片充满容器 */
+      height: 100%;
+      object-fit: contain;
+      /* 保持比例，contain 或 cover */
+    }
+
+    /* 添加飞行图片样式 */
+    .flying-image {
+      position: fixed;
+      /* 改成 fixed 让它相对于视口固定位置 */
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      /* 可选：圆形 */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      z-index: 10000;
+      /* 确保在最上层 */
+      pointer-events: auto;
+      /* 可以点击交互 */
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .flying-image:hover {
+      transform: scale(1.1);
+    }
+
+    #easterEgg {
+      background: linear-gradient(to right,
+          red, orange, yellow, green, blue, indigo, violet);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-align: right;
+    }
   </style>
 </head>
 
 <body>
-  <div class="topBar">
-    <h1 id="welcome-text">
-      <span id="WT-1">欢迎来到</span>
-      <br>
-      <span id="WT-2">Falling_light</span>
-      <br>
-      <span id="WT-3">的</span>
-      <span id="WT-4">懒惰摆烂实验型</span>
-      <span id="WT-5">个人主页！！</span>
-    </h1>
+  <!--右悬浮-->
+  <div class="rightFloat">
+    <img src="./images/figure.png" alt="">
   </div>
+  <!--中间栏-->
+  <div class="main-content">
+    <div class="topBar">
+      <h1 id="welcome-text">
+        <span id="WT-1">欢迎来到</span>
+        <br>
+        <span id="WT-2">Falling_light</span>
+        <br>
+        <span id="WT-3">的</span>
+        <span id="WT-4">懒惰摆烂实验型</span>
+        <span id="WT-5">个人主页！！</span>
+      </h1>
+    </div>
+
+    <div class="content">
+      <p>点击输人文木</p>
+      <!-- 空白占位-->
+      <div style="height: 2000px;"></div>
+      <a id='easterEgg'
+        href="https://www.bilibili.com/video/BV1Rs411R7Hi/?spm_id_from=333.337.search-card.all.click&vd_source=7c7f22e2f24c9c9e641c899da241d437">这是一个藏得很传统的彩蛋</a>
+    </div>
+  </div>
+
+  <!-- 飞来飞去的小图片 -->
+  <img src="./images/fly.gif" alt="飞行图片加载失败" class="flying-image" id="flyer">
+
+  <script>
+    window.onload = function () {
+      // 获取图片
+      const flyer = document.getElementById('flyer');
+      if (!flyer) return;
+
+      // 基础样式
+      flyer.style.position = 'fixed';
+      flyer.style.width = '100px';
+      flyer.style.height = '100px';
+      flyer.style.zIndex = '99999';
+      flyer.style.borderRadius = '50%';
+      flyer.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+      flyer.style.cursor = 'pointer';
+      flyer.style.transition = 'transform 0.2s';
+
+      // 局部变量
+      let x = Math.random() * (window.innerWidth - 100);
+      let y = Math.random() * (window.innerHeight - 100);
+      let speedX = (Math.random() + 1) * (Math.random() > 0.5 ? 1 : -1);
+      let speedY = (Math.random() + 1) * (Math.random() > 0.5 ? 1 : -1);
+      let isPaused = false;  // 局部暂停标志
+
+      // 设置初始位置
+      flyer.style.left = x + 'px';
+      flyer.style.top = y + 'px';
+
+      // 鼠标悬停：放大并暂停移动
+      flyer.addEventListener('mouseenter', () => {
+        flyer.style.transform = 'scale(1.1)';
+        isPaused = true;  // 修改局部变量
+      });
+
+      // 鼠标离开：恢复大小并继续移动
+      flyer.addEventListener('mouseleave', () => {
+        flyer.style.transform = 'scale(1)';
+        isPaused = false;  // 修改局部变量
+      });
+
+      // 动画循环
+      function moveImage() {
+        if (!isPaused) {  // 检查局部变量
+          x += speedX;
+          y += speedY;
+
+          const maxX = window.innerWidth - 100;
+          const maxY = window.innerHeight - 100;
+
+          if (x <= 0) { x = 0; speedX = Math.abs(speedX); }
+          if (x >= maxX) { x = maxX; speedX = -Math.abs(speedX); }
+          if (y <= 0) { y = 0; speedY = Math.abs(speedY); }
+          if (y >= maxY) { y = maxY; speedY = -Math.abs(speedY); }
+
+          flyer.style.left = x + 'px';
+          flyer.style.top = y + 'px';
+        }
+
+        requestAnimationFrame(moveImage);
+      }
+
+      moveImage();
+
+      window.addEventListener('resize', () => {
+        const maxX = window.innerWidth - 100;
+        const maxY = window.innerHeight - 100;
+        x = Math.min(x, maxX);
+        y = Math.min(y, maxY);
+        flyer.style.left = x + 'px';
+        flyer.style.top = y + 'px';
+      });
+    };
+  </script>
 </body>
 
 </html>
