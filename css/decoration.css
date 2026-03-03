@@ -1,0 +1,73 @@
+    /*此文件存储时尚小垃圾的样式*/
+
+    /*右悬浮窗样式*/
+    .rightFloat {
+      width: 10rem;
+      height: 20rem;
+      position: fixed;
+      right: 0;
+      top: 16rem;
+    }
+
+    .rightFloat img {
+      width: 100%;
+      /* 让图片充满容器 */
+      height: 100%;
+      object-fit: contain;
+      /* 保持比例，contain 或 cover */
+    }
+
+    /* 添加飞行图片样式 */
+    .flying-image {
+      position: fixed;
+      /* 改成 fixed 让它相对于视口固定位置 */
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      /* 圆形 */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      z-index: 10000;
+      /* 确保在最上层 */
+      pointer-events: auto;
+      /* 可以点击交互 */
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .flying-image:hover {
+      transform: scale(1.1);
+    }
+
+    /*彩蛋样式*/
+    #easterEgg {
+      background: linear-gradient(to right,
+          red, orange, yellow, green, blue, indigo, violet);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      float: right;
+    }
+
+    /*对话框样式*/
+    #messageBox {
+      position: fixed;
+      top: 16rem;
+      right: 1.5rem;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 8px 10px;
+      border-radius: 50px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+      z-index: 10000;
+      font-size: 16px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      pointer-events: none;
+    }
+
+    #messageBox.show {
+      opacity: 1;
+      visibility: visible;
+    }
