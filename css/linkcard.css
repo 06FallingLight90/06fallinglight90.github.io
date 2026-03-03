@@ -3,6 +3,7 @@
 .icon-links-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  /*每行自动填充多个链接*/
   gap: 25px 15px;
   justify-items: center;
   align-items: start;

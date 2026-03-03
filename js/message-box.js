@@ -13,7 +13,7 @@ const backgrounds = [
     message: '受命于天，既寿永昌！！--摄于北京'
   },
   {
-    url: './images/background/auditorium.png',
+    url: './images/background/auditorium.jpg',
     message: '中央大道的梧桐发枯，那是又过去了一年。'
   },
   {
@@ -131,7 +131,7 @@ window.addEventListener('load', () => {
     showMessage(selectedBg.message);
   }, 1000);
 
-  // 后续随机播放（10秒间隔）
+  // 后续随机播放（15秒间隔）
   setInterval(async () => {
     let msg;
 
