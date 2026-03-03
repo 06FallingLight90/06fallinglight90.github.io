@@ -8,6 +8,8 @@
 
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/decoration.css">
+  <link rel="stylesheet" href="css/linkcard.css">
+  <link rel="stylesheet" href="css/searchtag.css">
   <style>
     .topBar {
       text-align: center;
@@ -93,7 +95,63 @@
     </div>
 
     <div class="content">
-      <p>点击输人文木</p>
+      <!--搜索栏-->
+      <div class="bing-search-section">
+        <form action="https://www.bing.com/search" method="get" target="_blank" class="search-form">
+          <input type="text" name="q" placeholder="输入关键词..." class="search-input">
+          <button type="submit" class="search-btn">搜索</button>
+        </form>
+      </div>
+
+
+      <!--常用网页区-->
+      <div class="icon-links-grid">
+        <a href="https://bilibili.com" target="_blank" class="icon-link">
+          <div class="icon-wrapper">
+            <img src="https://www.bilibili.com/favicon.ico" alt="Bilibili">
+          </div>
+          <span class="icon-name">Bilibili</span>
+        </a>
+
+        <a href="https://deepseek.com" target="_blank" class="icon-link">
+          <div class="icon-wrapper">
+            <img src="https://www.deepseek.com/favicon.ico" alt="DS">
+          </div>
+          <span class="icon-name">deepseek</span>
+        </a>
+
+        <a href="https://jwc.seu.edu.cn" target="_blank" class="icon-link">
+          <div class="icon-wrapper">
+            <img src="/seu-icon.png">
+          </div>
+          <span class="icon-name">教务处</span>
+        </a>
+
+        <a href="https://ehall.seu.edu.cn/new/index.html" target="_blank" class="icon-link">
+          <div class="icon-wrapper">
+            <img src="/seu-icon.png">
+          </div>
+          <span class="icon-name">网上办事服务大厅</span>
+        </a>
+
+        <a href="https://software.seu.edu.cn/" target="_blank" class="icon-link">
+          <div class="icon-wrapper">
+            <img src="/seu-icon.png">
+          </div>
+          <span class="icon-name">软件正版化</span>
+        </a>
+
+        <a href="https://lib.seu.edu.cn/" target="_blank" class="icon-link">
+          <div class="icon-wrapper">
+            <img src="/seu-icon.png">
+          </div>
+          <span class="icon-name">李文正图书馆</span>
+        </a>
+      </div>
+
+
+
+
       <!-- 空白占位-->
       <div style="height: 2000px;"></div>
       <a id='easterEgg'

@@ -1,0 +1,43 @@
+/*搜索栏样式*/
+.bing-search-section {
+  margin: 30px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 15px;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+  margin-left: 8rem;
+  margin-right: 8rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 30px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  border-color: #4ecdc4;
+}
+
+.search-btn {
+  padding: 12px 25px;
+  background: skyblue;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.search-btn:hover {
+  background: #45b7b0;
+}
