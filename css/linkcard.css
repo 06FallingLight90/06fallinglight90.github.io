@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
   /*每行自动填充多个链接*/
-  gap: 25px 15px;
+  gap: 1.5rem 3rem;
   justify-items: center;
   align-items: start;
   max-width: 800px;

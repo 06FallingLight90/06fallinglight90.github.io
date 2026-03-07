@@ -1,0 +1,61 @@
+.topBar {
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+}
+
+#welcome-text {
+  color: aqua;
+  font-size: 2rem;
+  font-family: "whiteRoad", 'Microsoft YaHei', sans-serif;
+}
+
+#WT-2 {
+  background: linear-gradient(to right,
+      red, orange, yellow, green, blue, indigo, violet);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 4rem;
+  font-family: "dynalight", 'Microsoft YaHei', sans-serif;
+}
+
+#WT-4 {
+  color: aquamarine;
+  text-decoration: line-through solid gray 2px;
+}
+
+body {
+  margin: 0;
+  /* 清除body默认边距 */
+  background: #f0f2f5;
+  /* 两边露出的背景色 */
+
+  /* 确保图片覆盖整个页面 */
+  background-size: cover;
+
+  /* 图片不重复 */
+  background-repeat: no-repeat;
+
+  /* 图片居中显示 */
+  background-position: center;
+
+  /* 固定背景，滚动时不动（视差效果） */
+  background-attachment: fixed;
+
+  padding: 0;
+}
+
+/*中间主内容列的css*/
+.main-content {
+  max-width: 70%;
+  /* 主体内容最大宽度 */
+  margin: 0 auto;
+  /* 水平居中，自动左右边距 */
+  background: rgba(255, 255, 255, 0.5);
+  /* 主体内容背景色与透明度 */
+  padding: 20px;
+  /* 内容内边距 */
+  min-height: 100vh;
+  /* 最小高度占满视口 */
+}

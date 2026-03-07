@@ -9,8 +9,8 @@
 .search-form {
   display: flex;
   gap: 10px;
-  margin-left: 8rem;
-  margin-right: 8rem;
+  margin-left: 12%;
+  margin-right: 12%;
 }
 
 .search-input {
