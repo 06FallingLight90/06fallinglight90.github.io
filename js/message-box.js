@@ -47,6 +47,10 @@ const backgrounds = [
   {
     url: './images/background/autumnsky.jpg',
     message: '"我已经恋上南京的天空了"'
+  },
+  {
+    url: './images/background/fumo-satori.jpg',
+    message: '想起「盛开郁金香」'
   }
 ];
 
