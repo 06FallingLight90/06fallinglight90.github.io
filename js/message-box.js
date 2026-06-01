@@ -51,6 +51,10 @@ const backgrounds = [
   {
     url: './images/background/fumo-satori.jpg',
     message: '想起「盛开郁金香」'
+  },
+  {
+    url: './images/background/rocokingdom.jpg',
+    message: '我对万物的热情始终没有褪色，很好'
   }
 ];
 
@@ -65,7 +69,8 @@ const randomMessages = [
   "啊啊，法的世界里充满了光辉。",
   "一万年太久，只争朝夕",
   "我心中的宝藏更胜世间荣耀。",
-  "接纳了一切的颜色，才为洁白啊"
+  "接纳了一切的颜色，才为洁白啊",
+  "这期神了"
 ];
 
 
