@@ -1,7 +1,8 @@
 .topBar {
   text-align: center;
-  background: white;
+  background: rgb(221, 202, 252);
   border-radius: 10px;
+  opacity: 0.8;
 }
 
 #welcome-text {
