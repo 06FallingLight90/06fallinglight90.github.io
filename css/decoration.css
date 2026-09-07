@@ -3,8 +3,8 @@
     /*右悬浮窗样式*/
     .rightFloat {
       z-index: 10000;
-      width: 10rem;
-      height: 20rem;
+      width: 12rem;
+      height: 24rem;
       position: fixed;
       right: 0;
       top: 16rem;
